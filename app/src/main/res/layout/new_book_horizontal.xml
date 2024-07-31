@@ -1,22 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="230dp"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:elevation="20dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        android:weightSum="3"
+        android:elevation="15dp">
 
         <ImageView
             android:id="@+id/newbook"
+            style="@style/new_book_icon"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="40dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/purple_200"/>
+            android:layout_weight="1"
+            android:background="@color/purple_200"
+            android:elevation="15dp" />
+
+        <LinearLayout
+            style="@style/new_book_details"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@drawable/new_book_details"
+            android:elevation="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:elevation="25dp"
+                android:weightSum="3"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/newBookTypeTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:text="Book Type"
+                    style="@style/new_books_details_type"
+                    android:elevation="10dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/newBookNameTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:text="Book Name"
+                    style="@style/new_books_details_name"
+                    android:elevation="10dp"
+                    android:layout_weight="2"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

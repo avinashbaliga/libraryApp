@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.avinash.libraryapp.databinding.FragmentDashboardBinding
 import com.avinash.libraryapp.recyclerViewAdapters.NewBookRvAdapter
+import com.avinash.libraryapp.responseModels.ListOfBooksItem
 import com.avinash.libraryapp.viewModels.DashboardFragmentViewModel
 
 class DashboardFragment : Fragment() {
@@ -23,28 +24,34 @@ class DashboardFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         dashboardBinding = FragmentDashboardBinding.inflate(inflater, container, false)
-        initiateNewBookView()
+//        initiateNewBookView()
         initiateDashboardViewModel()
         assignDataObservers()
         return dashboardBinding.root
     }
 
-    private fun initiateNewBookView() {
+    private fun initiateNewBookView(listOfItems: List<ListOfBooksItem>) {
         var newBookRecyclerView: RecyclerView = dashboardBinding.newBookRV
         newBookRecyclerView.layoutManager =
             LinearLayoutManager(this.context, LinearLayoutManager.HORIZONTAL, false)
-        newBookRecyclerView.adapter = NewBookRvAdapter()
+        newBookRecyclerView.adapter = NewBookRvAdapter(listOfItems)
     }
 
     private fun assignDataObservers() {
         dashboardFragmentViewModel.getListOfBooks().observe(viewLifecycleOwner) { newValue ->
-            if (newValue != null)
+            if (newValue != null) {
                 Log.i("DashboardFragment", newValue.toString())
+                drawRecyclerViewWithData(newValue)
+            }
         }
     }
 
     private fun initiateDashboardViewModel() {
         dashboardFragmentViewModel =
             ViewModelProvider(this).get(DashboardFragmentViewModel::class.java)
+    }
+
+    private fun drawRecyclerViewWithData(listOfItems: List<ListOfBooksItem>) {
+        initiateNewBookView(listOfItems)
     }
 }
