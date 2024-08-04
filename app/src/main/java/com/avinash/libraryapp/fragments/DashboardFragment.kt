@@ -24,7 +24,6 @@ class DashboardFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         dashboardBinding = FragmentDashboardBinding.inflate(inflater, container, false)
-//        initiateNewBookView()
         initiateDashboardViewModel()
         assignDataObservers()
         return dashboardBinding.root
