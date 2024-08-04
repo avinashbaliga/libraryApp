@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipToPadding="false"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@drawable/all_books_container"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:elevation="15dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bookImageContainer"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toStartOf="@id/bookDetailsContainer"
+            app:layout_constraintHorizontal_weight="0.4"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/allBooksIconIV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:elevation="15dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bookDetailsContainer"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="0.6"
+            app:layout_constraintStart_toEndOf="@id/bookImageContainer">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                style="@style/all_book_details_container_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/allBooksBookTypeTV"
+                    style="@style/all_book_details_book_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Book type"
+                    app:layout_constraintBottom_toTopOf="@id/allBooksBookNameTV"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_weight="0.3" />
+
+                <TextView
+                    android:id="@+id/allBooksBookNameTV"
+                    style="@style/all_book_details_book_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Book Name"
+                    app:layout_constraintBottom_toTopOf="@id/addToCartButtonContainer"
+                    app:layout_constraintTop_toBottomOf="@id/allBooksBookTypeTV"
+                    app:layout_constraintVertical_weight="0.3" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/addToCartButtonContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/allBooksBookNameTV"
+                    app:layout_constraintVertical_weight="0.3">
+
+                    <TextView
+                        android:id="@+id/addToCartButton"
+                        style="@style/add_to_cart_button"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/add_to_cart_button"
+                        android:text="@string/add_to_cart"
+                        app:layout_constraintLeft_toLeftOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

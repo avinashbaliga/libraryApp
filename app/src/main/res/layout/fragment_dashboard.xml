@@ -74,10 +74,11 @@
                 android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/latestBooksTV">
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/newBookRV"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -90,7 +91,13 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/headerContainer"
-            app:layout_constraintVertical_weight="0.4" />
+            app:layout_constraintVertical_weight="0.4">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/allBooksRV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

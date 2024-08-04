@@ -54,4 +54,32 @@
         <item name="android:paddingTop">10dp</item>
         <item name="android:paddingLeft">10dp</item>
     </style>
+
+    <style name="all_books_icon_style">
+        <item name="android:layout_margin">20dp</item>
+    </style>
+
+    <style name="all_book_details_container_style">
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="all_book_details_book_type">
+        <item name="android:fontFamily">@font/abhaya_libre</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="all_book_details_book_name">
+        <item name="android:fontFamily">@font/abhaya_libre_bold</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="add_to_cart_button">
+        <item name="android:fontFamily">@font/abhaya_libre_bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:padding">2dp</item>
+    </style>
 </resources>
